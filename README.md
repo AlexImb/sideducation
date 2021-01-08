@@ -1,6 +1,11 @@
-# sideducation
+# Sideducation
 
-## Project setup
+> An alternative adaptive learning experience platform (LXP)
+
+
+## Development
+
+### Setup
 ```
 yarn install
 ```
