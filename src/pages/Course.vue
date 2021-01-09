@@ -77,6 +77,11 @@
 
           <div class="flex-auto">{{ courseModule.title }}</div>
 
+          <div v-if="!isTeacher" class="flex items-center">
+            <ProgressBar :splits="courseModule.progress.splits" class="hidden md:flex w-64 mr-4" />
+            <div>{{ getModuleTotalProgress(courseModule.progress.splits) }}%</div>
+          </div>
+
           <div class="actions flex">
             <div v-if="isTeacher && !courseModule.hiddenForStudent" class="w-6 mr-4">
               <Icon :path="mdiChartTimelineVariantShimmer" />
@@ -119,9 +124,10 @@ import { firebaseAuth, firestore } from '@/services/firebase';
 import Checkbox from '@/components/Checkbox';
 import MethodsRadarChart from '@/components/charts/MethodsRadarChart';
 import ActivityLineChart from '@/components/charts/ActivityLineChart';
+import ProgressBar from '@/components/charts/ProgressBar';
 
 export default {
-  components: { Checkbox, MethodsRadarChart, ActivityLineChart },
+  components: { Checkbox, MethodsRadarChart, ActivityLineChart, ProgressBar },
   data() {
     return {
       course: null,
@@ -267,9 +273,40 @@ export default {
               id: courseModule.id,
               ...courseModule.data(),
               materials: this.mockMaterials,
+              progress: {
+                splits: [
+                  {
+                    label: 'Method 1',
+                    percentage: Math.random() * (0.2 - 0.1) + 0.1,
+                    color: 'bg-indigo-400',
+                  },
+                  {
+                    label: 'Method 2',
+                    percentage: Math.random() * (0.3 - 0.1) + 0.1,
+                    color: 'bg-blue-400',
+                  },
+                  {
+                    label: 'Method 3',
+                    percentage: Math.random() * (0.3 - 0.1) + 0.1,
+                    color: 'bg-red-400',
+                  },
+                  {
+                    label: 'Method 4',
+                    percentage: Math.random() * (0.3 - 0.1) + 0.1,
+                    color: 'bg-green-400',
+                  },
+                ],
+              },
             }),
           );
         });
+    },
+
+    getModuleTotalProgress(splits) {
+      return Math.min(
+        Math.floor(splits.reduce((acc, split) => acc + split.percentage, 0) * 100),
+        100,
+      );
     },
   },
 };
