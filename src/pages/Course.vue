@@ -88,18 +88,20 @@
           </div>
         </div>
 
-        <div v-if="courseModule.expanded" class="py-2 border-t">
-          <div
-            v-for="material in courseModule.materials"
-            :key="material.id"
-            class="p-3 ml-8 border-b text-gray-700"
-          >
-            {{ material.title }}
+        <transition enter-class="opacity-0" leave-class="opacity-0">
+          <div v-if="courseModule.expanded" class="py-2 border-t duration-200">
+            <div
+              v-for="material in courseModule.materials"
+              :key="material.id"
+              class="p-3 ml-8 border-b text-gray-700"
+            >
+              {{ material.title }}
+            </div>
+            <div v-if="!isTeacher" class="text-right mt-4">
+              <button class="btn">Learn module</button>
+            </div>
           </div>
-          <div v-if="!isTeacher" class="text-right mt-4">
-            <button class="btn">Learn module</button>
-          </div>
-        </div>
+        </transition>
       </article>
     </section>
   </div>
