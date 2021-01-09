@@ -30,7 +30,7 @@
     </section>
 
     <section class="flex justify-center p-4 mb-16 md:px-16 lg:px-32">
-      <img class="xl:w-3/4" src="/img/landing-window.png" />
+      <img class="xl:w-3/4" src="/img/landing-window-teacher.png" />
     </section>
 
     <section class="text-center bg-gray-800 p-6 pt-12">
