@@ -205,7 +205,7 @@ export default {
     activityChartData() {
       return this.isTeacher
         ? {
-            labels: ['11 Jan 2021', '12 Jan 2021', '13 Jan 2021', '14 Jan 2021', '15 Jan 2021'],
+            labels: ['11-01', '12-01', '13-01', '14-01', '15-01'],
             datasets: [
               {
                 label: 'Questions answered correctly',
@@ -220,7 +220,7 @@ export default {
             ],
           }
         : {
-            labels: ['11 Jan 2021', '12 Jan 2021', '13 Jan 2021', '14 Jan 2021', '15 Jan 2021'],
+            labels: ['11-01', '12-01', '13-01', '14-01', '15-01'],
             datasets: [
               {
                 label: 'Questions answered correctly',
