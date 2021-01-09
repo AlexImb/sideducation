@@ -42,8 +42,8 @@
       </h2>
     </section>
 
-    <section class="flex flex-wrap justify-center  bg-gray-800 p-8 md:p-12">
-      <div class="w-full md:w-1/3 md:max-w-xl md:mr-12 pricing-card">
+    <section class="flex flex-wrap justify-center bg-gray-800 p-8 md:p-12">
+      <div class="w-full md:w-1/3 md:max-w-md md:mr-12 pricing-card">
         <h3 class="text-2xl font-bold">Department</h3>
         <p>less than 100 monthly active students</p>
 
@@ -53,7 +53,7 @@
 
         <a href="#why" class="pricing-card-btn">Buy now</a>
       </div>
-      <div class="w-full md:w-1/3 md:max-w-xl md:mr-12 pricing-card">
+      <div class="w-full md:w-1/3 md:max-w-md md:mr-12 pricing-card">
         <h1 class="text-2xl font-bold">Faculty</h1>
         <p>less than 1000 monthly active students</p>
         <div class="text-2xl font-bold mt-8">€11.75</div>
@@ -62,7 +62,7 @@
 
         <a href="#why" class="pricing-card-btn">Buy now</a>
       </div>
-      <div class="w-full md:w-1/3 md:max-w-xl md:mr-12 pricing-card">
+      <div class="w-full md:w-1/3 md:max-w-md pricing-card">
         <h1 class="text-2xl font-bold">Institution</h1>
         <p>1000+ monthly active students</p>
         <div class="text-2xl font-bold mt-8">from €6.25</div>
