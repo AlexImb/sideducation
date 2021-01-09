@@ -1,19 +1,19 @@
 <template>
   <div class="flex flex-col min-h-screen overflow-auto bg-gray-100 ">
-    <div class="sticky top-0 bg-white shadow h-12">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <the-header :is-auth="!!user" />
     <main class="flex-grow">
       <router-view />
     </main>
+    <the-footer />
   </div>
 </template>
 
 <script>
-import { firebaseAuth, firestore } from './services/firebase';
+import TheHeader from '@/components/TheHeader.vue';
+import TheFooter from '@/components/TheFooter.vue';
+import { firebaseAuth, firestore } from '@/services/firebase';
 export default {
-  components: {},
+  components: { TheHeader, TheFooter },
   data() {
     return {
       user: null,
