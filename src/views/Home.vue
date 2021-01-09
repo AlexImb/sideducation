@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <Icon :path="mdiAbTesting" />
+    <div class="w-4 h-4 bg-primary"></div>
+    <div class="w-4 h-4 bg-secondary"></div>
   </div>
 </template>
 
