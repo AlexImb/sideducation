@@ -2,10 +2,13 @@
 node_modules
 /dist
 
-
 # local env files
+.env
 .env.local
 .env.*.local
+
+# local Firebase init.json
+public/init.json
 
 # Log files
 npm-debug.log*
