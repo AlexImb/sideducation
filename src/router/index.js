@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Landing from '@/pages/Landing.vue';
-import Overview from '@/pages/Overview.vue';
 import Login from '@/pages/Login.vue';
 import Register from '@/pages/Register.vue';
 import Forgot from '@/pages/Forgot.vue';
+import Overview from '@/pages/Overview.vue';
+import Course from '@/pages/Course.vue';
 
 import { firebaseAuth } from '@/services/firebase';
 
@@ -37,6 +38,14 @@ const routes = [
     component: Overview,
     meta: {
       auth: true,
+    },
+  },
+  {
+    path: '/:id',
+    name: 'course',
+    component: Course,
+    meta: {
+      auth: false,
     },
   },
 ];
