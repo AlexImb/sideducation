@@ -9,5 +9,10 @@ service cloud.firestore {
       allow read: if true;
       allow write: if false;
     }
+    
+    match /emails/{document=**} {
+      allow create: if true;
+      allow read, write: if false;
+    }
   }
 }
