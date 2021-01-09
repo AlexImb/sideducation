@@ -63,6 +63,6 @@ export default {
 
 <style lang="postcss" scoped>
 .btn--social {
-  @apply flex justify-center border rounded py-2 m-2;
+  @apply flex justify-center bg-white border rounded py-2 m-2;
 }
 </style>

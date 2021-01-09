@@ -1,20 +1,64 @@
 <template>
-  <div class="p-6">
+  <div v-if="course" class="p-6">
     <section class="flex flex-col md:flex-row justify-between">
-      <h1 v-if="course" class="text-2xl font-semibold text-gray-900">
+      <h1 class="text-2xl font-semibold text-gray-900">
         {{ course.title }}
       </h1>
 
-      <div v-if="course" class="flex items-center cursor-pointer">
+      <div class="flex items-center cursor-pointer">
         <Checkbox v-model="isTeacher" />
         <span @click="isTeacher = !isTeacher">Toggle between the teacher and student view</span>
       </div>
     </section>
 
-    <section v-if="course" class="my-4 text-gray-700">
+    <section v-if="isTeacher" class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-4">
+      <div class="card h-32 bg-indigo-400">
+        <div class="text-5xl">38</div>
+        <div>students enrolled</div>
+      </div>
+      <div class="card h-32 bg-green-400">
+        <div class="text-5xl">7<span class="text-2xl"> / 8</span></div>
+        <div>modules visible to students</div>
+      </div>
+      <div class="card h-32 bg-purple-400">
+        <div class="text-5xl">4<span class="text-2xl"> / 5</span></div>
+        <div>learning methods active</div>
+      </div>
+      <div class="card h-32 bg-yellow-300">
+        <div class="text-5xl">58%</div>
+        <div>estimated retention rate</div>
+      </div>
+      <div class="card h-32 bg-red-400">
+        <div class="text-5xl">4</div>
+        <div>students without recent activity</div>
+      </div>
+    </section>
+
+    <section v-if="isTeacher" class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-4">
+      <div class="md:col-span-3 card bg-white">
+        <div class="mb-2">Aggregated course activity</div>
+        <ActivityLineChart :chart-data="activityChartData" />
+      </div>
+      <div class="md:col-span-2 card bg-white">
+        <div class="mb-2">Learning methods</div>
+        <MethodsRadarChart :chart-data="methodsRadaData" />
+      </div>
+    </section>
+    <section v-else class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-4">
+      <div class="md:col-span-3 card bg-white">
+        <div class="mb-2">Learning activity</div>
+        <ActivityLineChart :chart-data="activityChartData" />
+      </div>
+      <div class="md:col-span-2 card bg-white">
+        <div class="mb-2">Learning methods</div>
+        <MethodsRadarChart :chart-data="methodsRadaData" />
+      </div>
+    </section>
+
+    <section class="my-4 text-gray-700">
       <div class="flex items-center justify-between">
         <h2 class="text-2xl font-semibold">Modules</h2>
-        <button v-if="isTeacher" class="btn">Edit methods</button>
+        <button v-if="isTeacher" class="btn">Edit questions</button>
         <button v-else class="btn">Resume learning</button>
       </div>
       <article
@@ -71,9 +115,11 @@ import {
 } from '@mdi/js';
 import { firebaseAuth, firestore } from '@/services/firebase';
 import Checkbox from '@/components/Checkbox';
+import MethodsRadarChart from '@/components/charts/MethodsRadarChart';
+import ActivityLineChart from '@/components/charts/ActivityLineChart';
 
 export default {
-  components: { Checkbox },
+  components: { Checkbox, MethodsRadarChart, ActivityLineChart },
   data() {
     return {
       course: null,
@@ -105,6 +151,81 @@ export default {
     visibleCourseModules() {
       if (this.isTeacher) return this.courseModules;
       return this.courseModules.filter(cm => !cm.hiddenForStudent);
+    },
+
+    methodsRadaData() {
+      return this.isTeacher
+        ? {
+            labels: ['Method 1', 'Method 2', 'Method 3', 'Method 4', 'Method 5'],
+            datasets: [
+              {
+                label: 'Frequency',
+                backgroundColor: 'rgb(250,204,21,0.75)',
+                borderColor: '#FACC15',
+                pointBackgroundColor: '#FACC15',
+                data: [0.3, 0.4, 0, 0.41, 0.35],
+              },
+              {
+                label: 'Correctness',
+                backgroundColor: 'rgb(99,102,241,0.5)',
+                borderColor: '#6366F1',
+                pointBackgroundColor: '#6366F1',
+                data: [0.6, 0.7, 0, 0.6, 0.5],
+              },
+            ],
+          }
+        : {
+            labels: ['Method 1', 'Method 2', 'Method 3', 'Method 4'],
+            datasets: [
+              {
+                label: 'Frequency',
+                backgroundColor: 'rgb(250,204,21,0.75)',
+                borderColor: '#FACC15',
+                pointBackgroundColor: '#FACC15',
+                data: [0.25, 0.25, 0.25, 0.25],
+              },
+              {
+                label: 'Correctness',
+                backgroundColor: 'rgb(99,102,241,0.5)',
+                borderColor: '#6366F1',
+                pointBackgroundColor: '#6366F1',
+                data: [0.55, 0.65, 0.78, 0.85],
+              },
+            ],
+          };
+    },
+    activityChartData() {
+      return this.isTeacher
+        ? {
+            labels: ['11 Jan 2021', '12 Jan 2021', '13 Jan 2021', '14 Jan 2021', '15 Jan 2021'],
+            datasets: [
+              {
+                label: 'Questions answered correctly',
+                backgroundColor: '#6366F1',
+                data: [23, 20, 32, 13, 33],
+              },
+              {
+                label: 'Questions displayed',
+                backgroundColor: '#FACC15',
+                data: [38, 22, 47, 20, 43],
+              },
+            ],
+          }
+        : {
+            labels: ['11 Jan 2021', '12 Jan 2021', '13 Jan 2021', '14 Jan 2021', '15 Jan 2021'],
+            datasets: [
+              {
+                label: 'Questions answered correctly',
+                backgroundColor: '#6366F1',
+                data: [0, 4, 11, 0, 0],
+              },
+              {
+                label: 'Questions displayed',
+                backgroundColor: '#FACC15',
+                data: [0, 5, 13, 0, 0],
+              },
+            ],
+          };
     },
   },
   created() {
@@ -153,6 +274,9 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.card {
+  @apply p-6 rounded-lg shadow font-semibold text-gray-700;
+}
 .course-module {
   @apply p-4
   my-4
