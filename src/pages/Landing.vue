@@ -81,35 +81,56 @@
         src="/img/landing-learning.svg"
       />
       <div class="w-full md:w-1/2">
-        <h2 class="font-bold text-gray-800 text-2xl xl:text-5xl mb-4 md:mb-10">
+        <h2 class="font-bold text-gray-800 text-2xl xl:text-5xl mb-6 md:mb-10">
           A learning experience platform that works!
         </h2>
         <p class="text-gray-700 text-xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar est bibendum
-          nulla eleifend, id ultricies mauris pulvinar. Phasellus condimentum dolor non orci maximus
-          semper. Nullam quis varius erat. Aliquam pellentesque iaculis lacus in vehicula. Sed
-          ultricies tortor sit amet dui sollicitudin, et luctus nunc porttitor. Aenean laoreet felis
-          a arcu sodales varius quis vel nisl. Fusce in metus magna.
+          At Sideducation, we believe that technology has the potential to transform what’s possible
+          in education. Adaptive, personalized learning for the world has been our mission since we
+          started.
         </p>
-        <p class="text-gray-700 text-xl mt-10">
-          Morbi vestibulum arcu vitae nisi ultricies gravida. Nunc elementum libero vel sapien
-          euismod, consectetur hendrerit est rutrum. Donec eget bibendum felis. Etiam eu mattis
-          urna, vel blandit sem. Maecenas vel odio sed ligula laoreet laoreet eu non tortor. Aliquam
-          enim turpis, porttitor fermentum sem quis, maximus dictum sem. Donec sit amet porttitor
-          tellus, non hendrerit urna.
+        <p class="text-gray-700 text-xl mt-6">
+          Sideducation is a powerful assessment and reporting platform designed to understand the
+          learning style of students. It presents their course content using the learning method
+          that suits them best.
         </p>
+        <h2 class="font-bold text-gray-700 text-2xl xl:text-3xl my-6 md:mt-10">
+          Learning has never been easier.
+        </h2>
+        <p class="text-gray-700 text-xl mt-6">
+          Students will finally be able to learn their course material with the appropriate learning
+          method tailored to them.
+        </p>
+        <p class="text-gray-700 text-xl mt-6">
+          Teachers will have greater insight into how students are progressing in their learning and
+          understand where students need reinforcing, thus making teaching more efficient &
+          effective.
+        </p>
+        <p class="text-gray-700 text-xl mt-6">
+          Universities now have the ability to teach and provide a tailored way of learning.
+        </p>
+        <p class="text-gray-700 text-xl mt-6">
+          From performance to price, the status quo just isn’t good enough.
+        </p>
+        <h2 class="font-bold text-primary text-xl xl:text-2xl my-4">
+          We dare to do more:
+          <span class="text-gray-700">
+            design the best adaptive technology that delivers lasting impact to put achievement
+            within reach for all!</span
+          >
+        </h2>
 
-        <div class="mt-12 xl:mt-16">
+        <div class="mt-10">
           <router-link
             class="px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-primary hover:bg-indigo-600 md:text-lg xl:text-base text-white font-semibold shadow-md rounded-lg focus:outline-none"
             :to="{ name: 'overview' }"
             tag="button"
           >
-            Experience the educator demo
+            Experience our demo
           </router-link>
         </div>
 
-        <div class="mt-12 xl:mt-16">
+        <div class="mt-16">
           <h2 class="font-bold text-gray-800 text-2xl xl:text-4xl mb-4 md:mb-10">
             Need more information about what Sideducation means for your institution?
             <div class="text-primary">
