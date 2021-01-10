@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center md:mt-24 xl:mt-32">
+  <div class="flex justify-center items-center md:mt-16">
     <form
       class="w-full max-w-xl p-6 md:p-16 md:shadow-xl md:border md:rounded md:bg-white"
       @submit.prevent="register()"
