@@ -59,7 +59,14 @@
       <div class="flex items-center justify-between">
         <h2 class="text-2xl font-semibold">Modules</h2>
         <button v-if="isTeacher" class="btn">Edit questions</button>
-        <button v-else class="btn">Resume learning</button>
+        <router-link
+          v-else
+          tag="button"
+          class="btn"
+          :to="{ name: 'learn', params: { id, qid: 1 } }"
+        >
+          Resume learning</router-link
+        >
       </div>
       <article
         v-for="courseModule in visibleCourseModules"

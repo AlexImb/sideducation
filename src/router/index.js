@@ -6,6 +6,7 @@ import Register from '@/pages/Register.vue';
 import Forgot from '@/pages/Forgot.vue';
 import Overview from '@/pages/Overview.vue';
 import Course from '@/pages/Course.vue';
+import Learn from '@/pages/Learn.vue';
 
 import { firebaseAuth } from '@/services/firebase';
 
@@ -44,6 +45,14 @@ const routes = [
     path: '/:id',
     name: 'course',
     component: Course,
+    meta: {
+      auth: false,
+    },
+  },
+  {
+    path: '/:id/learn/:qid',
+    name: 'learn',
+    component: Learn,
     meta: {
       auth: false,
     },
