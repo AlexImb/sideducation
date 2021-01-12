@@ -35,7 +35,7 @@
       </a>
       <div class="font-semibold text-gray-700 mt-10">Read the following material</div>
       <section class="card bg-white mt-4" style="height: 60vh">
-        <embed :src="`/pdf/${qid}.pdf`" class="w-full h-full" />
+        <object :src="`/pdf/${qid}.pdf`" class="w-full h-full" />
       </section>
       <div class="font-semibold text-gray-700 mt-10">Solve the following task</div>
       <section class="card bg-white mt-4">
@@ -58,7 +58,7 @@
       </a>
       <div class="font-semibold text-gray-700 mt-6">Read the following material</div>
       <section class="card bg-white mt-4" style="height: 60vh">
-        <embed :src="`/pdf/${qid}.pdf`" class="w-full h-full" />
+        <object :src="`/pdf/${qid}.pdf`" class="w-full h-full" />
       </section>
       <section class="card bg-white mt-4">
         <div>
