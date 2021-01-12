@@ -25,8 +25,9 @@
       <a
         href="#why"
         class="ml-6 rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-white hover:bg-gray-200 md:text-lg xl:text-base text-gray-800 font-semibold leading-tight shadow-md"
-        >Why Sideducation?</a
       >
+        Why Sideducation?
+      </a>
     </section>
 
     <section class="flex justify-center p-4 mb-16 md:px-16 lg:px-32">
@@ -116,8 +117,8 @@
           We dare to do more:
           <span class="text-gray-700">
             design the best adaptive technology that delivers lasting impact to put achievement
-            within reach for all!</span
-          >
+            within reach for all!
+          </span>
         </h2>
 
         <div class="mt-10">

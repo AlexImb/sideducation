@@ -17,11 +17,17 @@
         <div>students enrolled</div>
       </div>
       <div class="card h-32 bg-green-400">
-        <div class="text-5xl">7<span class="text-2xl"> / 8</span></div>
+        <div class="text-5xl">
+          7
+          <span class="text-2xl">/ 8</span>
+        </div>
         <div>modules visible to students</div>
       </div>
       <div class="card h-32 bg-purple-400">
-        <div class="text-5xl">4<span class="text-2xl"> / 5</span></div>
+        <div class="text-5xl">
+          4
+          <span class="text-2xl">/ 5</span>
+        </div>
         <div>learning methods active</div>
       </div>
       <div class="card h-32 bg-yellow-300">
