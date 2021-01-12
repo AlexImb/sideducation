@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen overflow-auto bg-gray-100 ">
     <the-header :is-auth="!!user" />
     <main class="flex-grow">
-      <router-view />
+      <router-view :key="$route.fullPath" />
     </main>
     <the-footer />
   </div>
