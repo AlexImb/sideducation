@@ -35,10 +35,10 @@
       </a>
       <div class="font-semibold text-gray-700 mt-10">Read the following material</div>
       <section class="card bg-white mt-4">
-        <a :src="`/pdf/${qid}.pdf`" class="py-4">Download</a>
+        <a :href="`/pdf/${qid}.pdf`" class="py-4">Download</a>
         <object :data="`/pdf/${qid}.pdf`" class="w-full h-full" style="height: 60vh">
           <p>Your browser doesn't support PDFs!</p>
-          <p><a :src="`/pdf/${qid}.pdf`" class="py-4">Download the file instead</a></p>
+          <p><a :href="`/pdf/${qid}.pdf`" class="py-4">Download the file instead</a></p>
         </object>
       </section>
       <div class="font-semibold text-gray-700 mt-10">Solve the following task</div>
@@ -62,10 +62,10 @@
       </a>
       <div class="font-semibold text-gray-700 mt-6">Read the following material</div>
       <section class="card bg-white mt-4">
-        <a :src="`/pdf/${qid}.pdf`" class="py-4">Download</a>
+        <a :href="`/pdf/${qid}.pdf`" class="py-4">Download</a>
         <object :data="`/pdf/${qid}.pdf`" class="w-full h-full" style="height: 60vh">
           <p>Your browser doesn't support PDFs!</p>
-          <p><a :src="`/pdf/${qid}.pdf`" class="py-4">Download the file instead</a></p>
+          <p><a :href="`/pdf/${qid}.pdf`" class="py-4">Download the file instead</a></p>
         </object>
       </section>
       <section class="card bg-white mt-4">
