@@ -115,7 +115,14 @@
               {{ material.title }}
             </div>
             <div v-if="!isTeacher" class="text-right mt-4">
-              <button class="btn">Learn module</button>
+              <router-link
+                v-if="!isTeacher"
+                tag="button"
+                class="btn"
+                :to="{ name: 'learn', params: { id, qid: 1 } }"
+              >
+                Learn module
+              </router-link>
             </div>
           </div>
         </transition>
