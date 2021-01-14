@@ -177,7 +177,7 @@ export default {
   computed: {
     visibleCourseModules() {
       if (this.isTeacher) return this.courseModules;
-      return this.courseModules.filter(cm => !cm.hiddenForStudent);
+      return this.courseModules?.filter(cm => !cm.hiddenForStudent);
     },
 
     methodsRadaData() {
