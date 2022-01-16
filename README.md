@@ -2,6 +2,8 @@
 
 > An alternative adaptive learning experience platform (LXP)
 
+![Preview](https://github.com/AlexImb/sideducation/blob/master/public/img/landing-window-student.png?raw=true)
+
 
 ## Development
 
